@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="16dp"
+  tools:context=".ui.activity.MainActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/activity_main_images_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@id/activity_main_cardView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+      android:id="@+id/activity_main_imageView"
+      android:layout_width="82dp"
+      android:layout_height="38dp"
+      android:layout_marginBottom="2dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/logo" />
+
+    <ImageView
+      android:id="@+id/activity_main_avatar"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:srcCompat="@tools:sample/avatars" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <com.google.android.material.card.MaterialCardView
+    android:id="@+id/activity_main_cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="22dp"
+    android:outlineProvider="none"
+    app:cardBackgroundColor="@color/green_light"
+    app:cardCornerRadius="8dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/activity_main_images_container"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="8dp">
+
+      <ImageButton
+        android:id="@+id/activity_main_navigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow"
+        app:tint="@color/green_dark" />
+
+      <TextView
+        android:id="@+id/activity_main_percent_diet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_navigate"
+        tools:text="90,86%" />
+
+      <TextView
+        android:id="@+id/activity_main_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="refeições dentro da dieta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_percent_diet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <LinearLayout
+    android:id="@+id/activity_main_linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="22dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toTopOf="@+id/activity_main_recyclerview"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/activity_main_cardView">
+
+    <TextView
+      android:id="@+id/activity_main_textView3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/nunito_sans_semibold"
+      android:text="Refeições"
+      android:textSize="18sp" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/activity_main_btn_add_meal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Nova refeição"
+      app:backgroundTint="@color/gray_2"
+      app:cornerRadius="8dp"
+      app:icon="@drawable/ic_add"
+      app:iconGravity="textStart" />
+  </LinearLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/activity_main_recyclerview"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:fadingEdge="horizontal|vertical"
+    android:fadingEdgeLength="50dp"
+    android:requiresFadingEdge="horizontal|vertical"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/activity_main_linearLayout2"
+    tools:listitem="@layout/day_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
