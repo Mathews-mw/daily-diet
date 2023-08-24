@@ -1,10 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
   <!-- Base application theme. -->
-  <style name="Base.Theme.Daily_diet" parent="Theme.Material3.DayNight.NoActionBar">
-
-
+  <style name="Base.Theme.Daily_diet" parent="Theme.Material3.DayNight">
     <item name="android:fontFamily">@font/nunito_sans</item>
   </style>
 
   <style name="Theme.Daily_diet" parent="Base.Theme.Daily_diet" />
+
+  <style name="Theme.Daily_diet_NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="android:fontFamily">@font/nunito_sans</item>
+  </style>
 </resources>
